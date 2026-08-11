@@ -140,9 +140,13 @@
 .service-container {
     max-width: 1100px;
     margin: auto;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.service-container.show-services {
+    display: grid;
 }
 
 .service-card {
