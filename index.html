@@ -249,12 +249,30 @@
     margin-bottom: 40px;
 }
 
-.project-container {
+.service-container {
     max-width: 1100px;
     margin: auto;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.service-container.show-services {
+    display: grid;
+}
+        .view-all-services {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    margin-bottom: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.view-all-services:hover {
+    background: #333;
 }
 
 .project-card {
