@@ -207,6 +207,51 @@
         grid-template-columns: 1fr;
     }
 }    
+      .why-us {
+    padding: 70px 25px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.why-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.why-card {
+    padding: 25px 15px;
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .why-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-container {
+        grid-template-columns: 1fr;
+    }
+}  
 </style>
 </head>
 
@@ -322,6 +367,34 @@
             <h3>3D Design & Visualization</h3>
             <p>Modern Architectural Visualization</p>
         </div>
+    </div>
+</section>
+    <section class="why-us">
+
+    <h2>Why Choose AHDC</h2>
+
+    <div class="why-container">
+
+        <div class="why-card">
+            <h3>Quality</h3>
+            <p>We maintain quality in every stage of design and construction.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Cost Effective</h3>
+            <p>Smart engineering solutions with practical and cost-effective design.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Professional</h3>
+            <p>Professional engineering services with attention to every detail.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>Reliable</h3>
+            <p>We value trust, transparency and long-term client relationships.</p>
+        </div>
+
     </div>
 </section>
 </body>
