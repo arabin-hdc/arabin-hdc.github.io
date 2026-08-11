@@ -119,6 +119,48 @@
     font-weight: bold;
     font-size: 20px;
 }
+        .services {
+    padding: 70px 25px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+} 
 </style>
 </head>
 
@@ -170,6 +212,45 @@
     <div class="owner">
         Engr. Md. Abdul Alim<br>
         Founder & CEO | AHDC
+    </div>
+
+</section>
+    <section class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <h3>Architectural & Structural Design</h3>
+            <p>Professional architectural and structural design for safe and functional buildings.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>3D Visualization</h3>
+            <p>Modern 3D visualization to help you see your project before construction.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Interior & Exterior Design</h3>
+            <p>Creative interior and exterior design solutions tailored to your project.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Construction</h3>
+            <p>Quality construction services with professional engineering supervision.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Estimation & Costing</h3>
+            <p>Accurate estimation, costing and BOQ preparation for your construction project.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Site Supervision</h3>
+            <p>Professional site supervision to maintain quality and proper construction practices.</p>
+        </div>
+
     </div>
 
 </section>
