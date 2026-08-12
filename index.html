@@ -942,6 +942,7 @@ function toggleAllServices() {
     }
 }
 
+
 function toggleService(button) {
 
     const details = button.nextElementSibling;
@@ -955,9 +956,6 @@ function toggleService(button) {
     }
 }
 
-function toggleAllServices() {
-
-/* নিচের দুটি নতুন function এখানে বসবে */
 
 function toggleInquiry() {
 
@@ -973,14 +971,15 @@ function toggleInquiry() {
     }
 }
 
+
 function sendInquiry() {
 
-    const name = document.getElementById("inquiryName").value;
-    const phone = document.getElementById("inquiryPhone").value;
-    const email = document.getElementById("inquiryEmail").value;
+    const name = document.getElementById("inquiryName").value.trim();
+    const phone = document.getElementById("inquiryPhone").value.trim();
+    const email = document.getElementById("inquiryEmail").value.trim();
     const service = document.getElementById("inquiryService").value;
-    const location = document.getElementById("inquiryLocation").value;
-    const message = document.getElementById("inquiryMessage").value;
+    const location = document.getElementById("inquiryLocation").value.trim();
+    const message = document.getElementById("inquiryMessage").value.trim();
 
     if (!name || !phone || !service || !message) {
         alert("Please fill in your Name, Phone Number, Service and Project Details.");
@@ -988,19 +987,21 @@ function sendInquiry() {
     }
 
     const whatsappMessage =
-        "AHDC Project Inquiry%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Email: " + encodeURIComponent(email) + "%0A" +
-        "Service: " + encodeURIComponent(service) + "%0A" +
-        "Project Location: " + encodeURIComponent(location) + "%0A" +
-        "Project Details: " + encodeURIComponent(message);
+        "AHDC Project Inquiry\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Service: " + service + "\n" +
+        "Project Location: " + location + "\n" +
+        "Project Details: " + message;
 
-    window.open(
-        "https://wa.me/8801715793697?text=" + whatsappMessage,
-        "_blank"
-    );
+    const whatsappURL =
+        "https://wa.me/8801715793697?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
 }
+
 </script>
 </body>
 </html>
