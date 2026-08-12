@@ -226,9 +226,9 @@
 
 @media (max-width: 768px) {
 
-    .service-container,
-    .service-container.show-services {
+    .service-container.show-services  display: grid;
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .services {
@@ -240,6 +240,8 @@
     }
 
     .service-card {
+        width: 100%;
+        box-sizing: border-box;
         padding: 25px 18px;
     }
 }
@@ -252,18 +254,6 @@
 .projects h2 {
     font-size: 32px;
     margin-bottom: 40px;
-}
-
-.service-container {
-    max-width: 1100px;
-    margin: auto;
-    display: none;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.service-container.show-services {
-    display: grid;
 }
         .view-all-services {
     background: #111;
