@@ -62,9 +62,36 @@
     color: #666;
 }
         .hero {
-    padding: 90px 25px;
+    padding: 80px 40px;
     text-align: center;
     background: #eeeeee;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.hero-logo {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
 }
 
 .hero h1 {
@@ -380,25 +407,88 @@
       .footer {
     background: #111;
     color: white;
-    text-align: center;
-    padding: 30px 20px;
+    padding: 55px 30px 25px;
 }
 
-.footer h3 {
-    margin-bottom: 10px;
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 50px;
+    align-items: start;
+}
+
+.footer-brand {
+    text-align: left;
+}
+
+.footer-brand img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.footer-brand h3 {
     font-size: 22px;
+    margin: 5px 0 15px;
 }
 
-.footer p {
-    margin: 5px 0;
+.footer-brand p {
     font-size: 14px;
+    line-height: 1.6;
+    margin: 7px 0;
+    color: #ddd;
+}
+
+.footer-links,
+.footer-contact {
+    text-align: left;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.footer-links a,
+.footer-contact a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: white;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.footer-contact a {
+    display: inline;
 }
 
 .footer .copyright {
-    margin-top: 20px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+
+    text-align: center;
     font-size: 13px;
     color: #aaa;
-}  
+}
        html {
     scroll-behavior: smooth;
 } 
@@ -553,6 +643,91 @@
     }
 
 }
+        @media (max-width: 768px) {
+
+    .hero {
+        padding: 55px 15px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-logo {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-logo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-buttons a {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+}
+        @media (max-width: 768px) {
+
+    .footer {
+        padding: 45px 20px 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-brand img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .footer-brand h3 {
+        font-size: 21px;
+    }
+
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+        margin-bottom: 12px;
+    }
+
+    .footer .copyright {
+        margin-top: 30px;
+        line-height: 1.6;
+    }
+}
 </style>
 </head>
 
@@ -574,17 +749,30 @@
 
 <section class="hero" id="home">
 
-    <h1>Arabin Home Design & Construction</h1>
+    <div class="hero-content">
 
-    <h2>Building Dreams with Strong & Smart Structural Design</h2>
+        <div class="hero-logo">
+            <img src="logo.png" alt="Arabin Home Design & Construction">
+        </div>
 
-    <p>We Ensure Quality with Cost Effective Design</p>
+        <div class="hero-text">
 
-    <div class="hero-buttons">
-    <a href="#services">Our Services</a>
-    <a href="#contact">Contact Us</a>
-</div>
-    </section>
+            <h1>Arabin Home Design & Construction</h1>
+
+            <h2>Building Dreams with Strong & Smart Structural Design</h2>
+
+            <p>We Ensure Quality with Cost Effective Design</p>
+
+            <div class="hero-buttons">
+                <a href="#services">Our Services</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     
 <section class="about" id="about">
 
@@ -915,14 +1103,67 @@
 </section>
     <footer class="footer">
 
-    <h3>Arabin Home Design & Construction</h3>
+    <div class="footer-content">
 
-    <p>Building Dreams with Strong & Smart Structural Design</p>
+        <div class="footer-brand">
 
-    <p>We Ensure Quality with Cost Effective Design</p>
+            <img src="logo.png" alt="Arabin Home Design & Construction">
+
+            <h3>Arabin Home Design & Construction</h3>
+
+            <p>
+                Building Dreams with Strong & Smart Structural Design
+            </p>
+
+            <p>
+                We Ensure Quality with Cost Effective Design
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h4>Contact Us</h4>
+
+            <p>📞 01715793697</p>
+
+            <p>📧 arabin.hdc@gmail.com</p>
+
+            <p>
+                📘
+                <a href="https://facebook.com/ArabinHDC"
+                   target="_blank">Facebook</a>
+            </p>
+
+            <p>
+                ▶️
+                <a href="https://youtube.com/ArabinHDC"
+                   target="_blank">YouTube</a>
+            </p>
+
+        </div>
+
+    </div>
 
     <div class="copyright">
-        © 2026 Arabin Home Design & Construction. All Rights Reserved.
+
+        © 2026 Arabin Home Design & Construction.
+        All Rights Reserved.
+
     </div>
 
 </footer>
