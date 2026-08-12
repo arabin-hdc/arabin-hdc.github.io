@@ -453,6 +453,105 @@
         font-size: 16px;
     }
 }
+        /* Inquiry Form */
+
+.inquiry-form {
+    display: none;
+    max-width: 650px;
+    margin: 35px auto 0;
+    padding: 30px 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.10);
+    text-align: left;
+}
+
+.inquiry-form.show {
+    display: block;
+}
+
+.inquiry-form h3 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.inquiry-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+    outline: none;
+    border-color: #111;
+}
+
+.contact-buttons button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    background: #111;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.contact-buttons button:hover {
+    background: #333;
+}
+
+.submit-inquiry {
+    width: 100%;
+    padding: 13px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.submit-inquiry:hover {
+    background: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .inquiry-form {
+        margin: 30px 0 0;
+        padding: 25px 18px;
+    }
+
+    .inquiry-form h3 {
+        font-size: 23px;
+    }
+
+    .inquiry-form input,
+    .inquiry-form select,
+    .inquiry-form textarea {
+        font-size: 14px;
+    }
+
+}
 </style>
 </head>
 
@@ -752,8 +851,7 @@
         </div>
 
     </div>
-</section>
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
 
     <h2>Contact Us</h2>
 
@@ -763,10 +861,56 @@
 
     <p>📞 01715793697</p>
 
+    <p>📧 arabin.hdc@gmail.com</p>
+
+    <p>
+        📘 <a href="https://facebook.com/ArabinHDC" target="_blank">Facebook</a>
+        &nbsp;&nbsp;
+        ▶️ <a href="https://youtube.com/ArabinHDC" target="_blank">YouTube</a>
+    </p>
+
     <div class="contact-buttons">
         <a href="tel:+8801715793697">Call Us</a>
-        <a href="https://wa.me/8801715793697">WhatsApp</a>
+        <a href="https://wa.me/8801715793697" target="_blank">WhatsApp</a>
+        <button onclick="toggleInquiry()">Send an Inquiry →</button>
     </div>
+
+    <div class="inquiry-form" id="inquiryForm">
+
+        <h3>Send an Inquiry</h3>
+
+        <input type="text" id="inquiryName" placeholder="Your Name">
+
+        <input type="tel" id="inquiryPhone" placeholder="Phone Number">
+
+        <input type="email" id="inquiryEmail" placeholder="Email Address">
+
+        <select id="inquiryService">
+            <option value="">Select Service</option>
+            <option>Architectural & Structural Design</option>
+            <option>Interior, Exterior & 3D Visualization</option>
+            <option>Steel Building & Steel Shed Construction</option>
+            <option>Road Design & Construction</option>
+            <option>Electrical & Plumbing Design</option>
+            <option>RAJUK/Paurashava Approval</option>
+            <option>Earthwork & Drainage Systems</option>
+            <option>Survey, Soil Investigation & Load Testing</option>
+            <option>Construction & Site Supervision</option>
+            <option>Estimation, BOQ & Costing</option>
+            <option>Contracting & Material Supply</option>
+            <option>Construction Trades & Maintenance</option>
+        </select>
+
+        <input type="text" id="inquiryLocation" placeholder="Project Location">
+
+        <textarea id="inquiryMessage" placeholder="Tell us about your project"></textarea>
+
+        <button class="submit-inquiry" onclick="sendInquiry()">
+            Submit Inquiry →
+        </button>
+
+    </div>
+
 </section>
     <footer class="footer">
 
@@ -809,7 +953,80 @@ function toggleService(button) {
         button.innerHTML = "Hide Details ↑";
     }
 }
+<script>
 
+function toggleAllServices() {
+
+    const container = document.querySelector(".service-container");
+    const button = document.querySelector(".view-all-services");
+
+    container.classList.toggle("show-services");
+
+    if (container.classList.contains("show-services")) {
+        button.innerHTML = "Hide Services ↑";
+    } else {
+        button.innerHTML = "View All Services ↓";
+    }
+}
+
+function toggleService(button) {
+
+    const details = button.nextElementSibling;
+
+    if (details.style.display === "block") {
+        details.style.display = "none";
+        button.innerHTML = "View Details →";
+    } else {
+        details.style.display = "block";
+        button.innerHTML = "Hide Details ↑";
+    }
+}
+
+
+/* নিচের দুটি নতুন function এখানে বসবে */
+
+function toggleInquiry() {
+
+    const form = document.getElementById("inquiryForm");
+
+    form.classList.toggle("show");
+
+    if (form.classList.contains("show")) {
+        form.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+function sendInquiry() {
+
+    const name = document.getElementById("inquiryName").value;
+    const phone = document.getElementById("inquiryPhone").value;
+    const email = document.getElementById("inquiryEmail").value;
+    const service = document.getElementById("inquiryService").value;
+    const location = document.getElementById("inquiryLocation").value;
+    const message = document.getElementById("inquiryMessage").value;
+
+    if (!name || !phone || !service || !message) {
+        alert("Please fill in your Name, Phone Number, Service and Project Details.");
+        return;
+    }
+
+    const whatsappMessage =
+        "AHDC Project Inquiry%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Service: " + encodeURIComponent(service) + "%0A" +
+        "Project Location: " + encodeURIComponent(location) + "%0A" +
+        "Project Details: " + encodeURIComponent(message);
+
+    window.open(
+        "https://wa.me/8801715793697?text=" + whatsappMessage,
+        "_blank"
+    );
+}
 </script>
 </body>
 </html>
