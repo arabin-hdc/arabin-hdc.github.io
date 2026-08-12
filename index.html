@@ -953,35 +953,8 @@ function toggleService(button) {
         button.innerHTML = "Hide Details ↑";
     }
 }
-<script>
 
 function toggleAllServices() {
-
-    const container = document.querySelector(".service-container");
-    const button = document.querySelector(".view-all-services");
-
-    container.classList.toggle("show-services");
-
-    if (container.classList.contains("show-services")) {
-        button.innerHTML = "Hide Services ↑";
-    } else {
-        button.innerHTML = "View All Services ↓";
-    }
-}
-
-function toggleService(button) {
-
-    const details = button.nextElementSibling;
-
-    if (details.style.display === "block") {
-        details.style.display = "none";
-        button.innerHTML = "View Details →";
-    } else {
-        details.style.display = "block";
-        button.innerHTML = "Hide Details ↑";
-    }
-}
-
 
 /* নিচের দুটি নতুন function এখানে বসবে */
 
