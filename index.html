@@ -1,94 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Arabin Home Design & Construction</title>
+
 
     <style>
 
         /* =====================================================
-           1. GLOBAL / COMMON
+           1. GLOBAL
         ===================================================== */
 
         html {
             scroll-behavior: smooth;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 60px 25px;
+            padding: 0;
             text-align: center;
             background: #f5f5f5;
             color: #222;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: normal;
-        }
-
+        h1,
+        h2,
+        h3,
         p {
-            font-size: 18px;
-            margin-top: 25px;
+            margin-top: 0;
         }
 
 
         /* =====================================================
-           2. HEADER & NAVIGATION
+           2. HEADER
         ===================================================== */
 
         header {
-            background: white;
-            color: #111;
-            padding: 8px 25px;
+            background: #ffffff;
+            color: #111111;
+
+            padding: 10px 25px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            width: 100%;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            width: 100px;
-            height: 20px;
+
+            width: 120px;
+            height: 25px;
         }
 
         .logo img {
-            width: 100px;
-            height: 20px;
+            width: 120px;
+            height: 25px;
+
             object-fit: contain;
             display: block;
-            transform: scale(1.7);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         nav a {
-            color: #111;
+            color: #111111;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 16px;
+
+            margin-left: 22px;
+
+            font-size: 15px;
         }
 
         nav a:hover {
-            color: #666;
+            color: #666666;
         }
 
 
         /* =====================================================
-           3. HERO SECTION
+           3. HERO
         ===================================================== */
 
         .hero {
             padding: 80px 40px;
-            text-align: center;
             background: #eeeeee;
         }
 
@@ -99,11 +111,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             gap: 50px;
         }
 
         .hero-logo {
-            flex: 0 0 220px;
+            flex: 0 0 300px;
 
             display: flex;
             justify-content: center;
@@ -111,8 +124,9 @@
         }
 
         .hero-logo img {
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
+
             object-fit: contain;
         }
 
@@ -129,6 +143,8 @@
         .hero h2 {
             font-size: 24px;
             font-weight: normal;
+            line-height: 1.4;
+
             margin-bottom: 20px;
         }
 
@@ -139,29 +155,30 @@
 
         .hero-buttons a {
             display: inline-block;
+
             padding: 12px 24px;
             margin: 5px;
 
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             text-decoration: none;
+
             border-radius: 5px;
         }
 
         .hero-buttons a:hover {
-            background: #333;
+            background: #333333;
         }
 
 
         /* =====================================================
-           4. ABOUT SECTION
+           4. ABOUT
         ===================================================== */
 
         .about {
             padding: 70px 25px;
-            background: white;
-            text-align: center;
+            background: #ffffff;
         }
 
         .about h2 {
@@ -172,23 +189,26 @@
         .about p {
             max-width: 800px;
             margin: 10px auto;
+
             line-height: 1.7;
             font-size: 17px;
         }
 
         .about .owner {
             margin-top: 30px;
+
             font-weight: bold;
             font-size: 20px;
         }
 
 
         /* =====================================================
-           5. SERVICES SECTION
+           5. SERVICES
         ===================================================== */
 
         .services {
             padding: 70px 25px;
+
             background: #f5f5f5;
             text-align: center;
         }
@@ -200,34 +220,43 @@
 
         .services-intro {
             max-width: 750px;
+
             margin: 0 auto 40px;
+
             font-size: 17px;
             line-height: 1.6;
         }
 
         .view-all-services {
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             border: none;
+
             padding: 13px 25px;
             margin-bottom: 35px;
 
             border-radius: 5px;
+
             cursor: pointer;
+
             font-size: 15px;
         }
 
         .view-all-services:hover {
-            background: #333;
+            background: #333333;
         }
 
         .service-container {
             max-width: 1100px;
+
             margin: auto;
 
             display: none;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
         }
 
@@ -236,12 +265,14 @@
         }
 
         .service-card {
-            background: white;
+            background: #ffffff;
+
             padding: 30px 20px;
 
             border-radius: 10px;
 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.08);
 
             transition:
                 transform 0.3s ease,
@@ -262,29 +293,35 @@
 
         .service-card h3 {
             font-size: 20px;
+            line-height: 1.4;
+
             margin-bottom: 12px;
         }
 
         .service-card > p {
             font-size: 15px;
             line-height: 1.6;
+
             margin: 0 0 15px;
         }
 
         .service-card button {
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             border: none;
+
             padding: 10px 18px;
 
             border-radius: 5px;
+
             cursor: pointer;
+
             font-size: 14px;
         }
 
         .service-card button:hover {
-            background: #333;
+            background: #333333;
         }
 
         .service-details {
@@ -293,23 +330,25 @@
             margin-top: 18px;
             padding-top: 15px;
 
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #dddddd;
         }
 
         .service-details p {
             font-size: 15px;
             line-height: 1.7;
+
             margin: 0;
         }
 
         .workforce-highlight {
             max-width: 900px;
+
             margin: 45px auto 0;
 
             padding: 25px 20px;
 
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             border-radius: 10px;
         }
@@ -321,110 +360,146 @@
         .workforce-highlight p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 0;
+
+            margin: 10px 0 0;
         }
 
 
         /* =====================================================
-           6. PROJECTS SECTION
+           6. PROJECTS
         ===================================================== */
 
         .projects {
-    padding: 70px 25px;
-    background: white;
-    text-align: center;
-}
+            padding: 70px 25px;
 
-.projects h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
+            background: #ffffff;
 
-.projects-intro {
-    max-width: 750px;
-    margin: 0 auto 40px;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #555;
-}
+            text-align: center;
+        }
 
-.project-container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
+        .projects h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
 
-.project-card {
-    background: #f5f5f5;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .projects-intro {
+            max-width: 750px;
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
-}
+            margin: 0 auto 40px;
 
-.project-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
+            font-size: 17px;
+            line-height: 1.6;
 
-.project-card-content {
-    padding: 25px 20px;
-}
+            color: #555555;
+        }
 
-.project-card h3 {
-    font-size: 21px;
-    margin: 0 0 12px;
-}
+        .project-container {
+            max-width: 1100px;
 
-.project-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0 0 20px;
-    color: #555;
-}
+            margin: auto;
 
-.project-card button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 11px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
+            display: grid;
 
-.project-card button:hover {
-    background: #333;
-}
+            grid-template-columns:
+                repeat(3, 1fr);
 
-/* Project Details */
+            gap: 25px;
+        }
 
-.project-details {
-    display: none;
-    margin-top: 18px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
+        .project-card {
+            background: #f5f5f5;
 
-.project-details.show {
-    display: block;
-}
+            border-radius: 10px;
 
-.project-details p {
-    margin: 0 0 10px;
-    font-size: 14px;
-    color: #333;
-}
+            overflow: hidden;
+
+            box-shadow:
+                0 2px 10px rgba(0,0,0,0.08);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .project-card-content {
+            padding: 25px 20px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+
+            line-height: 1.4;
+
+            margin: 0 0 12px;
+        }
+
+        .project-card p {
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            margin: 0 0 20px;
+
+            color: #555555;
+        }
+
+        .project-card button {
+            background: #111111;
+            color: #ffffff;
+
+            border: none;
+
+            padding: 11px 20px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+        }
+
+        .project-card button:hover {
+            background: #333333;
+        }
+
+        .project-details {
+            display: none;
+
+            margin-top: 18px;
+            padding-top: 15px;
+
+            border-top: 1px solid #dddddd;
+
+            text-align: left;
+        }
+
+        .project-details.show {
+            display: block;
+        }
+
+        .project-details p {
+            margin: 0 0 8px;
+
+            font-size: 14px;
+
+            color: #333333;
+        }
 
 
         /* =====================================================
@@ -432,9 +507,11 @@
         ===================================================== */
 
         .why-us {
-            padding: 45px 25px;
-            background: #111;
-            color: white;
+            padding: 50px 25px;
+
+            background: #111111;
+            color: #ffffff;
+
             text-align: center;
         }
 
@@ -445,10 +522,14 @@
 
         .why-container {
             max-width: 1000px;
+
             margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 10px;
         }
 
@@ -458,24 +539,30 @@
 
         .why-card h3 {
             font-size: 20px;
+
             margin-bottom: 8px;
         }
 
         .why-card p {
             font-size: 15px;
+
             line-height: 1.5;
+
             margin: 5px 0;
         }
 
 
         /* =====================================================
-           8. CONTACT SECTION
+           8. CONTACT
         ===================================================== */
 
         .contact {
             padding: 70px 25px;
+
             background: #f5f5f5;
-            color: #222;
+
+            color: #222222;
+
             text-align: center;
         }
 
@@ -502,22 +589,26 @@
             display: inline-block;
 
             padding: 12px 25px;
+
             margin: 5px;
 
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             text-decoration: none;
+
             border: none;
+
             border-radius: 5px;
 
             cursor: pointer;
+
             font-size: 15px;
         }
 
         .contact-buttons a:hover,
         .contact-buttons button:hover {
-            background: #333;
+            background: #333333;
         }
 
 
@@ -529,10 +620,13 @@
             display: none;
 
             max-width: 650px;
+
             margin: 35px auto 0;
+
             padding: 30px 25px;
 
-            background: white;
+            background: #ffffff;
+
             border-radius: 10px;
 
             box-shadow:
@@ -547,7 +641,9 @@
 
         .inquiry-form h3 {
             text-align: center;
+
             font-size: 25px;
+
             margin-bottom: 25px;
         }
 
@@ -555,20 +651,23 @@
         .inquiry-form select,
         .inquiry-form textarea {
             width: 100%;
-            box-sizing: border-box;
 
             padding: 12px 14px;
+
             margin-bottom: 15px;
 
-            border: 1px solid #ccc;
+            border: 1px solid #cccccc;
+
             border-radius: 5px;
 
             font-family: Arial, sans-serif;
+
             font-size: 15px;
         }
 
         .inquiry-form textarea {
             min-height: 120px;
+
             resize: vertical;
         }
 
@@ -576,7 +675,8 @@
         .inquiry-form select:focus,
         .inquiry-form textarea:focus {
             outline: none;
-            border-color: #111;
+
+            border-color: #111111;
         }
 
         .submit-inquiry {
@@ -584,18 +684,20 @@
 
             padding: 13px;
 
-            background: #111;
-            color: white;
+            background: #111111;
+            color: #ffffff;
 
             border: none;
+
             border-radius: 5px;
 
             cursor: pointer;
+
             font-size: 15px;
         }
 
         .submit-inquiry:hover {
-            background: #333;
+            background: #333333;
         }
 
 
@@ -604,23 +706,27 @@
         ===================================================== */
 
         .footer {
-            background: #ffffff !important;
-            color: #111111 !important;
+            background: #ffffff;
+
+            color: #111111;
 
             padding: 35px 30px 20px;
 
             width: 100%;
-            box-sizing: border-box;
         }
 
         .footer-content {
             max-width: 1100px;
+
             margin: auto;
 
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr;
 
             gap: 20px;
+
             align-items: start;
         }
 
@@ -633,20 +739,24 @@
             height: 150px;
 
             object-fit: contain;
+
             margin-bottom: 10px;
         }
 
         .footer-brand h3 {
             font-size: 22px;
+
             margin: 5px 0 10px;
         }
 
         .footer-brand p {
             font-size: 14px;
+
             line-height: 1.5;
 
             margin: 5px 0;
-            color: #555;
+
+            color: #555555;
         }
 
         .footer-links,
@@ -657,51 +767,57 @@
         .footer-links h4,
         .footer-contact h4 {
             font-size: 19px;
+
             margin-bottom: 12px;
         }
 
         .footer-links a,
         .footer-contact a {
-            display: block;
+            color: #333333;
 
-            color: #333;
             text-decoration: none;
 
             font-size: 14px;
+        }
+
+        .footer-links a {
+            display: block;
+
             margin: 7px 0;
         }
 
         .footer-links a:hover,
         .footer-contact a:hover {
-            color: #666;
+            color: #666666;
         }
 
         .footer-contact p {
             font-size: 14px;
-            margin: 7px 0;
-            color: #333;
-        }
 
-        .footer-contact a {
-            display: inline;
+            margin: 7px 0;
+
+            color: #333333;
         }
 
         .footer .copyright {
             max-width: 1100px;
+
             margin: 25px auto 0;
 
             padding-top: 15px;
 
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #dddddd;
 
             text-align: center;
+
             font-size: 13px;
-            color: #777;
+
+            color: #777777;
         }
 
 
         /* =====================================================
-           11. MOBILE RESPONSIVE
+           11. TABLET / MOBILE
         ===================================================== */
 
         @media (max-width: 768px) {
@@ -709,20 +825,18 @@
             /* Header */
 
             header {
-                background: white;
-                color: #111;
-
                 padding: 10px;
 
-                display: flex;
                 flex-direction: column;
+
                 align-items: center;
             }
 
             .logo {
                 width: 120px;
                 height: 24px;
-                margin-bottom: 8px;
+
+                margin-bottom: 10px;
             }
 
             .logo img {
@@ -734,16 +848,20 @@
                 width: 100%;
 
                 display: flex;
+
                 justify-content: center;
+
                 align-items: center;
 
-                white-space: nowrap;
+                flex-wrap: nowrap;
             }
 
             nav a {
-                color: #111;
                 margin: 0 3px;
-                font-size: 12px;
+
+                font-size: 11px;
+
+                white-space: nowrap;
             }
 
 
@@ -755,17 +873,19 @@
 
             .hero-content {
                 flex-direction: column;
+
                 gap: 20px;
             }
 
             .hero-logo {
-                flex: none;
                 width: 100%;
+
+                flex: none;
             }
 
             .hero-logo img {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
             }
 
             .hero-text {
@@ -774,22 +894,20 @@
 
             .hero h1 {
                 font-size: 30px;
-                margin-bottom: 12px;
+
+                line-height: 1.3;
             }
 
             .hero h2 {
                 font-size: 20px;
+
                 line-height: 1.4;
             }
 
             .hero p {
                 font-size: 16px;
-                line-height: 1.5;
-            }
 
-            .hero-buttons a {
-                padding: 11px 18px;
-                font-size: 14px;
+                line-height: 1.5;
             }
 
 
@@ -805,48 +923,63 @@
 
             .service-container.show-services {
                 display: grid;
+
                 grid-template-columns: 1fr;
+
                 gap: 20px;
             }
 
             .service-card {
                 width: 100%;
-                box-sizing: border-box;
+
                 padding: 25px 18px;
             }
 
 
             /* Projects */
 
-             .projects {
-        padding: 60px 15px;
-    }
+            .projects {
+                padding: 60px 15px;
+            }
 
-    .projects h2 {
-        font-size: 30px;
-    }
+            .projects h2 {
+                font-size: 30px;
+            }
 
-    .projects-intro {
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
+            .projects-intro {
+                font-size: 16px;
 
-    .project-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+                margin-bottom: 30px;
+            }
 
-    .project-card img {
-        height: 220px;
-    }
+            .project-container {
+                grid-template-columns: 1fr;
 
-    .project-card-content {
-        padding: 22px 18px;
-    }
-}
+                gap: 20px;
+
+                width: 100%;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+
+            .project-card img {
+                width: 100%;
+
+                height: 220px;
+            }
+
+            .project-card-content {
+                padding: 22px 18px;
+            }
+
+            .project-card h3 {
+                font-size: 22px;
+            }
 
 
-            /* Why Choose */
+            /* Why */
 
             .why-container {
                 grid-template-columns: 1fr 1fr;
@@ -857,6 +990,7 @@
 
             .inquiry-form {
                 margin: 30px 0 0;
+
                 padding: 25px 18px;
             }
 
@@ -879,7 +1013,9 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
+
                 gap: 20px;
+
                 text-align: center;
             }
 
@@ -890,16 +1026,6 @@
             .footer-brand img {
                 width: 140px;
                 height: 140px;
-                margin-bottom: 8px;
-            }
-
-            .footer-brand h3 {
-                font-size: 21px;
-                margin: 5px 0 10px;
-            }
-
-            .footer-brand p {
-                margin: 5px 0;
             }
 
             .footer-links,
@@ -907,24 +1033,14 @@
                 text-align: center;
             }
 
-            .footer-links h4,
-            .footer-contact h4 {
-                margin-bottom: 10px;
-            }
-
-            .footer-links a {
-                margin: 6px 0;
-            }
-
-            .footer-contact p {
-                margin: 6px 0;
-            }
-
             .footer .copyright {
                 margin-top: 20px;
+
                 padding-top: 12px;
+
                 line-height: 1.5;
             }
+
         }
 
 
@@ -934,737 +1050,128 @@
 
         @media (max-width: 480px) {
 
+            nav a {
+                margin: 0 2px;
+
+                font-size: 10px;
+            }
+
+            .hero-logo img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
             .why-container {
                 grid-template-columns: 1fr;
+            }
+
+            .project-card img {
+                height: 200px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <header>
+<header>
 
-        <div class="logo">
-            <img src="logo.jpg" alt="AHDC Logo">
-        </div>
+    <div class="logo">
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="company-profile.pdf" target="_blank">Company Profile</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-    </header>
-
-
-    <!-- =====================================================
-         HERO
-    ===================================================== -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <div class="hero-logo">
-                <img
-                    src="logo.png"
-                    alt="Arabin Home Design & Construction"
-                >
-            </div>
-
-            <div class="hero-text">
-
-                <h1>
-                    Arabin Home Design & Construction
-                </h1>
-
-                <h2>
-                    Building Dreams with Strong & Smart Structural Design
-                </h2>
-
-                <p>
-                    We Ensure Quality with Cost Effective Design
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#services">
-                        Our Services
-                    </a>
-
-                    <a href="#contact">
-                        Contact Us
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         ABOUT
-    ===================================================== -->
-
-    <section class="about" id="about">
-
-        <h2>About Us</h2>
-
-        <p>
-            Arabin Home Design & Construction (AHDC) is a professional
-            engineering and construction service company dedicated to
-            quality design, smart solutions and cost-effective construction.
-        </p>
-
-        <p>
-            We provide Architectural & Structural Design, 3D Visualization,
-            Construction, Site Supervision, Estimation & Costing and other
-            engineering services.
-        </p>
-
-        <div class="owner">
-            Engr. Md. Abdul Alim<br>
-            Founder & CEO | AHDC
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SERVICES
-    ===================================================== -->
-
-    <section class="services" id="services">
-
-        <h2>Our Services</h2>
-
-        <p class="services-intro">
-            Professional engineering, design and construction solutions
-            tailored to meet your project requirements.
-        </p>
-
-        <button
-            class="view-all-services"
-            onclick="toggleAllServices()"
+        <img
+            src="logo.jpg"
+            alt="AHDC Logo"
         >
-            View All Services ↓
-        </button>
 
+    </div>
 
-        <div class="service-container">
 
+    <nav>
 
-            <!-- Service 01 -->
+        <a href="#home">Home</a>
 
-            <div class="service-card">
+        <a href="#about">About</a>
 
-                <div class="service-icon">🏗️</div>
+        <a href="#services">Services</a>
 
-                <h3>
-                    Architectural & Structural Design
-                </h3>
+        <a href="#projects">Projects</a>
 
-                <p>
-                    Professional building design and structural engineering solutions.
-                </p>
+        <a
+            href="company-profile.pdf"
+            target="_blank"
+        >
+            Company Profile
+        </a>
 
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
+        <a href="#contact">Contact</a>
 
-                <div class="service-details">
+    </nav>
 
-                    <p>
-                        We provide architectural planning, structural analysis,
-                        structural design, working drawings and detailing for
-                        safe, functional and durable buildings.
-                    </p>
+</header>
 
-                </div>
 
-            </div>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
+<section
+    class="hero"
+    id="home"
+>
 
-            <!-- Service 02 -->
+    <div class="hero-content">
 
-            <div class="service-card">
+        <div class="hero-logo">
 
-                <div class="service-icon">🏠</div>
-
-                <h3>
-                    Interior, Exterior & 3D Visualization
-                </h3>
-
-                <p>
-                    Creative design solutions with realistic 3D visualization.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide modern interior and exterior design along with
-                        3D visualization to help clients visualize their project
-                        before construction.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 03 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🏭</div>
-
-                <h3>
-                    Steel Building & Steel Shed Construction
-                </h3>
-
-                <p>
-                    Practical and durable steel building solutions.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide design and construction solutions for steel
-                        buildings, industrial sheds, warehouses and other
-                        steel structures.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 04 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🛣️</div>
-
-                <h3>
-                    Road Design & Construction
-                </h3>
-
-                <p>
-                    Engineering solutions for roads and related infrastructure.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        Our services include road planning, design, estimation
-                        and construction support for reliable and functional
-                        road infrastructure.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 05 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">⚡</div>
-
-                <h3>
-                    Electrical & Plumbing Design
-                </h3>
-
-                <p>
-                    Efficient electrical and plumbing design for buildings.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide building electrical and plumbing layouts
-                        designed for safety, functionality and efficient
-                        installation.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 06 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🏛️</div>
-
-                <h3>
-                    RAJUK/Paurashava Approval
-                </h3>
-
-                <p>
-                    Professional support for building approval processes.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We assist clients with necessary drawings, documentation
-                        and submission support for RAJUK and Paurashava approval
-                        processes.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 07 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🌊</div>
-
-                <h3>
-                    Earthwork & Drainage Systems
-                </h3>
-
-                <p>
-                    Practical solutions for earthwork and drainage requirements.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide earthwork planning, quantity estimation and
-                        drainage solutions for residential, commercial and
-                        infrastructure projects.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 08 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🔬</div>
-
-                <h3>
-                    Survey, Soil Investigation & Load Testing
-                </h3>
-
-                <p>
-                    Essential site investigation and testing services.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We coordinate survey, soil investigation and load testing
-                        services to support safe and reliable engineering design
-                        and construction decisions.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 09 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">👷</div>
-
-                <h3>
-                    Construction & Site Supervision
-                </h3>
-
-                <p>
-                    Professional construction management and site supervision.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide construction services and professional site
-                        supervision to maintain quality, proper workmanship and
-                        compliance with approved designs.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 10 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">📊</div>
-
-                <h3>
-                    Estimation, BOQ & Costing
-                </h3>
-
-                <p>
-                    Accurate quantity estimation and project costing.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We prepare detailed estimates, BOQ, quantity calculations
-                        and project costing to help clients plan and control
-                        construction budgets.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 11 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🤝</div>
-
-                <h3>
-                    Contracting & Material Supply
-                </h3>
-
-                <p>
-                    Reliable contracting and construction material solutions.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide construction contracting and material supply
-                        solutions with a focus on quality, reliability and
-                        project requirements.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Service 12 -->
-
-            <div class="service-card">
-
-                <div class="service-icon">🔧</div>
-
-                <h3>
-                    All Construction Trades & Maintenance
-                </h3>
-
-                <p>
-                    Comprehensive construction trades and maintenance services.
-                </p>
-
-                <button onclick="toggleService(this)">
-                    View Details →
-                </button>
-
-                <div class="service-details">
-
-                    <p>
-                        We provide support across various construction trades,
-                        repair, renovation and maintenance requirements for
-                        residential and commercial properties.
-                    </p>
-
-                </div>
-
-            </div>
+            <img
+                src="logo.png"
+                alt="Arabin Home Design & Construction"
+            >
 
         </div>
 
 
-        <div class="workforce-highlight">
+        <div class="hero-text">
 
-            <strong>
-                Services with Skilled & Experienced Workforce
-            </strong>
+            <h1>
+                Arabin Home Design & Construction
+            </h1>
+
+            <h2>
+                Building Dreams with Strong & Smart Structural Design
+            </h2>
 
             <p>
-                We are committed to delivering quality work through skilled,
-                experienced and dedicated professionals.
+                We Ensure Quality with Cost Effective Design
             </p>
 
-        </div>
 
-    </section>
+            <div class="hero-buttons">
 
+                <a href="#services">
+                    Our Services
+                </a>
 
-    <!-- =====================================================
-         PROJECTS
-    ===================================================== -->
-
-    <section class="projects" id="projects">
-
-        <h2>Our Projects</h2>
-
-        <p class="projects-intro">
-            Explore our work across building design & consultancy,
-            construction contracting, and construction materials supply.
-        </p>
-
-
-        <div class="project-container">
-
-
-            <!-- PROJECT CATEGORY 01 -->
-
-            <div class="project-card">
-
-                <!-- Replace this image later -->
-                <img
-                    src="https://via.placeholder.com/600x400"
-                    alt="Building Design & Consultancy"
-                >
-
-                <div class="project-card-content">
-
-                    <h3>
-                        Building Design & Consultancy
-                    </h3>
-
-                    <p>
-                        Professional architectural, structural design
-                        and engineering consultancy services.
-                    </p>
-
-                    <div class="project-buttons">
-
-                        <a href="#">
-                            View Projects →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT CATEGORY 02 -->
-
-            <div class="project-card">
-
-                <!-- Replace this image later -->
-                <img
-                    src="https://via.placeholder.com/600x400"
-                    alt="Contracting"
-                >
-
-                <div class="project-card-content">
-
-                    <h3>
-                        Contracting
-                    </h3>
-
-                    <p>
-                        Quality construction and civil works delivered
-                        by skilled and experienced professionals.
-                    </p>
-
-                    <div class="project-buttons">
-
-                        <a href="#">
-                            View Projects →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT CATEGORY 03 -->
-
-            <div class="project-card">
-
-                <!-- Replace this image later -->
-                <img
-                    src="https://via.placeholder.com/600x400"
-                    alt="Materials Supply"
-                >
-
-                <div class="project-card-content">
-
-                    <h3>
-                        Materials Supply
-<section class="projects" id="projects">
-
-    <h2>Our Projects</h2>
-
-    <p class="projects-intro">
-        Explore our work across building design & consultancy,
-        construction contracting, and construction materials supply.
-    </p>
-
-    <div class="project-container">
-
-        <!-- Building Design & Consultancy -->
-
-        <div class="project-card">
-
-            <img src="design-project.jpg"
-                 alt="Building Design & Consultancy Project">
-
-            <div class="project-card-content">
-
-                <h3>Building Design & Consultancy</h3>
-
-                <p>
-                    Professional architectural, structural design and
-                    engineering consultancy services.
-                </p>
-
-                <button onclick="toggleProject(this)">
-                    View Projects →
-                </button>
-
-                <div class="project-details">
-
-                    <p>• Architectural Design</p>
-                    <p>• Structural Design</p>
-                    <p>• 3D Visualization</p>
-                    <p>• Engineering Consultancy</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Contracting -->
-
-        <div class="project-card">
-
-            <img src="contracting-project.jpg"
-                 alt="Construction Contracting Project">
-
-            <div class="project-card-content">
-
-                <h3>Contracting</h3>
-
-                <p>
-                    Quality construction and civil works delivered by
-                    skilled and experienced professionals.
-                </p>
-
-                <button onclick="toggleProject(this)">
-                    View Projects →
-                </button>
-
-                <div class="project-details">
-
-                    <p>• Ongoing Project</p>
-                    <p>• Completed Project</p>
-                    <p>• Building Construction</p>
-                    <p>• Civil & Infrastructure Works</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Materials Supply -->
-
-        <div class="project-card">
-
-            <img src="materials-supply.jpg"
-                 alt="Construction Materials Supply">
-
-            <div class="project-card-content">
-
-                <h3>Materials Supply</h3>
-
-                <p>
-                    Reliable supply of quality construction materials
-                    for residential, commercial and infrastructure projects.
-                </p>
-
-                <button onclick="toggleProject(this)">
-                    View Material Sample →
-                </button>
-
-                <div class="project-details">
-
-                    <p>• Rod & Steel</p>
-                    <p>• Cement</p>
-                    <p>• Brick</p>
-                    <p>• Sand & Stone</p>
-
-                </div>
+                <a href="#contact">
+                    Contact Us
+                </a>
 
             </div>
 
@@ -1675,683 +1182,1335 @@
 </section>
 
 
-    <!-- =====================================================
-         WHY CHOOSE AHDC
-    ===================================================== -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-    <section class="why-us">
+<section
+    class="about"
+    id="about"
+>
 
-        <h2>
-            Why Choose AHDC
-        </h2>
+    <h2>
+        About Us
+    </h2>
 
-        <div class="why-container">
+    <p>
+        Arabin Home Design & Construction (AHDC) is a professional
+        engineering and construction service company dedicated to
+        quality design, smart solutions and cost-effective construction.
+    </p>
+
+    <p>
+        We provide Architectural & Structural Design, 3D Visualization,
+        Construction, Site Supervision, Estimation & Costing and other
+        engineering services.
+    </p>
+
+    <div class="owner">
+
+        Engr. Md. Abdul Alim<br>
+
+        Founder & CEO | AHDC
+
+    </div>
+
+</section>
 
 
-            <div class="why-card">
+<!-- =====================================================
+     SERVICES
+===================================================== -->
 
-                <h3>
-                    Quality
-                </h3>
+<section
+    class="services"
+    id="services"
+>
 
-                <p>
-                    We maintain quality in every stage of design and construction.
-                </p>
+    <h2>
+        Our Services
+    </h2>
 
+    <p class="services-intro">
+
+        Professional engineering, design and construction solutions
+        tailored to meet your project requirements.
+
+    </p>
+
+
+    <button
+        class="view-all-services"
+        onclick="toggleAllServices()"
+    >
+
+        View All Services ↓
+
+    </button>
+
+
+    <div class="service-container">
+
+
+        <!-- SERVICE 01 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🏗️
             </div>
-
-
-            <div class="why-card">
-
-                <h3>
-                    Cost Effective
-                </h3>
-
-                <p>
-                    Smart engineering solutions with practical and cost-effective design.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <h3>
-                    Professional
-                </h3>
-
-                <p>
-                    Professional engineering services with attention to every detail.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <h3>
-                    Reliable
-                </h3>
-
-                <p>
-                    We value trust, transparency and long-term client relationships.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-    ===================================================== -->
-
-    <section class="contact" id="contact">
-
-        <h2>
-            Contact Us
-        </h2>
-
-        <p>
-            Ready to build your dream project?
-        </p>
-
-        <p>
-            <strong>
-                Arabin Home Design & Construction (AHDC)
-            </strong>
-        </p>
-
-
-        <!-- Dhaka Office -->
-
-        <p class="office-address">
-
-            📍 <strong>Dhaka Office:</strong><br>
-
-            Suite # 5B, Suvastu Villa,
-            <span style="white-space: nowrap;">
-                House # 114,
-            </span><br>
-
-            Road # 15, Block C, Banani, Dhaka.
-
-        </p>
-
-
-        <!-- Debidwar Office -->
-
-        <p class="office-address">
-
-            📍 <strong>Debidwar Office:</strong><br>
-
-            403/1, Gomti R/A, Baniapara,<br>
-
-            Debidwar, Cumilla.
-
-        </p>
-
-
-        <!-- Phone -->
-
-        <p>
-            📞 01715793697
-        </p>
-
-
-        <!-- Email -->
-
-        <p>
-            📧 arabin.hdc@gmail.com
-        </p>
-
-
-        <!-- Social -->
-
-        <p>
-
-            📘
-            <a
-                href="https://facebook.com/ArabinHDC"
-                target="_blank"
-            >
-                Facebook
-            </a>
-
-            &nbsp;&nbsp;
-
-            ▶️
-            <a
-                href="https://youtube.com/ArabinHDC"
-                target="_blank"
-            >
-                YouTube
-            </a>
-
-        </p>
-
-
-        <!-- Contact Buttons -->
-
-        <div class="contact-buttons">
-
-            <a href="tel:+8801715793697">
-                Call Us
-            </a>
-
-            <a
-                href="https://wa.me/8801715793697"
-                target="_blank"
-            >
-                WhatsApp
-            </a>
-
-            <button onclick="toggleInquiry()">
-                Send an Inquiry →
-            </button>
-
-        </div>
-
-
-        <!-- Inquiry Form -->
-
-        <div
-            class="inquiry-form"
-            id="inquiryForm"
-        >
 
             <h3>
-                Send an Inquiry
+                Architectural & Structural Design
             </h3>
 
+            <p>
+                Professional building design and structural engineering solutions.
+            </p>
 
-            <input
-                type="text"
-                id="inquiryName"
-                placeholder="Your Name"
-            >
-
-
-            <input
-                type="tel"
-                id="inquiryPhone"
-                placeholder="Phone Number"
-            >
-
-
-            <input
-                type="email"
-                id="inquiryEmail"
-                placeholder="Email Address"
-            >
-
-
-            <select id="inquiryService">
-
-                <option value="">
-                    Select Service
-                </option>
-
-                <option>
-                    Architectural & Structural Design
-                </option>
-
-                <option>
-                    Interior, Exterior & 3D Visualization
-                </option>
-
-                <option>
-                    Steel Building & Steel Shed Construction
-                </option>
-
-                <option>
-                    Road Design & Construction
-                </option>
-
-                <option>
-                    Electrical & Plumbing Design
-                </option>
-
-                <option>
-                    RAJUK/Paurashava Approval
-                </option>
-
-                <option>
-                    Earthwork & Drainage Systems
-                </option>
-
-                <option>
-                    Survey, Soil Investigation & Load Testing
-                </option>
-
-                <option>
-                    Construction & Site Supervision
-                </option>
-
-                <option>
-                    Estimation, BOQ & Costing
-                </option>
-
-                <option>
-                    Contracting & Material Supply
-                </option>
-
-                <option>
-                    Construction Trades & Maintenance
-                </option>
-
-            </select>
-
-
-            <input
-                type="text"
-                id="inquiryLocation"
-                placeholder="Project Location"
-            >
-
-
-            <textarea
-                id="inquiryMessage"
-                placeholder="Tell us about your project"
-            ></textarea>
-
-
-            <button
-                class="submit-inquiry"
-                onclick="sendInquiry()"
-            >
-                Submit Inquiry →
+            <button onclick="toggleService(this)">
+                View Details →
             </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide architectural planning, structural analysis,
+                    structural design, working drawings and detailing for
+                    safe, functional and durable buildings.
+                </p>
+
+            </div>
 
         </div>
 
-    </section>
+
+        <!-- SERVICE 02 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🏠
+            </div>
+
+            <h3>
+                Interior, Exterior & 3D Visualization
+            </h3>
+
+            <p>
+                Creative design solutions with realistic 3D visualization.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide modern interior and exterior design along with
+                    3D visualization to help clients visualize their project
+                    before construction.
+                </p>
+
+            </div>
+
+        </div>
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+        <!-- SERVICE 03 -->
 
-    <footer class="footer">
+        <div class="service-card">
 
-        <div class="footer-content">
+            <div class="service-icon">
+                🏭
+            </div>
+
+            <h3>
+                Steel Building & Steel Shed Construction
+            </h3>
+
+            <p>
+                Practical and durable steel building solutions.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide design and construction solutions for steel
+                    buildings, industrial sheds, warehouses and other
+                    steel structures.
+                </p>
+
+            </div>
+
+        </div>
 
 
-            <!-- Footer Brand -->
+        <!-- SERVICE 04 -->
 
-            <div class="footer-brand">
+        <div class="service-card">
 
-                <img
-                    src="logo.png"
-                    alt="Arabin Home Design & Construction"
-                >
+            <div class="service-icon">
+                🛣️
+            </div>
+
+            <h3>
+                Road Design & Construction
+            </h3>
+
+            <p>
+                Engineering solutions for roads and related infrastructure.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    Our services include road planning, design, estimation
+                    and construction support for reliable and functional
+                    road infrastructure.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 05 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Electrical & Plumbing Design
+            </h3>
+
+            <p>
+                Efficient electrical and plumbing design for buildings.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide building electrical and plumbing layouts
+                    designed for safety, functionality and efficient
+                    installation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 06 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🏛️
+            </div>
+
+            <h3>
+                RAJUK/Paurashava Approval
+            </h3>
+
+            <p>
+                Professional support for building approval processes.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We assist clients with necessary drawings, documentation
+                    and submission support for RAJUK and Paurashava approval
+                    processes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 07 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🌊
+            </div>
+
+            <h3>
+                Earthwork & Drainage Systems
+            </h3>
+
+            <p>
+                Practical solutions for earthwork and drainage requirements.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide earthwork planning, quantity estimation and
+                    drainage solutions for residential, commercial and
+                    infrastructure projects.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 08 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔬
+            </div>
+
+            <h3>
+                Survey, Soil Investigation & Load Testing
+            </h3>
+
+            <p>
+                Essential site investigation and testing services.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We coordinate survey, soil investigation and load testing
+                    services to support safe and reliable engineering design
+                    and construction decisions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 09 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                👷
+            </div>
+
+            <h3>
+                Construction & Site Supervision
+            </h3>
+
+            <p>
+                Professional construction management and site supervision.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide construction services and professional site
+                    supervision to maintain quality, proper workmanship and
+                    compliance with approved designs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 10 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                📊
+            </div>
+
+            <h3>
+                Estimation, BOQ & Costing
+            </h3>
+
+            <p>
+                Accurate quantity estimation and project costing.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We prepare detailed estimates, BOQ, quantity calculations
+                    and project costing to help clients plan and control
+                    construction budgets.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 11 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🤝
+            </div>
+
+            <h3>
+                Contracting & Material Supply
+            </h3>
+
+            <p>
+                Reliable contracting and construction material solutions.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide construction contracting and material supply
+                    solutions with a focus on quality, reliability and
+                    project requirements.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE 12 -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔧
+            </div>
+
+            <h3>
+                All Construction Trades & Maintenance
+            </h3>
+
+            <p>
+                Comprehensive construction trades and maintenance services.
+            </p>
+
+            <button onclick="toggleService(this)">
+                View Details →
+            </button>
+
+            <div class="service-details">
+
+                <p>
+                    We provide support across various construction trades,
+                    repair, renovation and maintenance requirements for
+                    residential and commercial properties.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="workforce-highlight">
+
+        <strong>
+            Services with Skilled & Experienced Workforce
+        </strong>
+
+        <p>
+            We are committed to delivering quality work through skilled,
+            experienced and dedicated professionals.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+     IMPORTANT: THIS SECTION EXISTS ONLY ONCE
+===================================================== -->
+
+<section
+    class="projects"
+    id="projects"
+>
+
+    <h2>
+        Our Projects
+    </h2>
+
+    <p class="projects-intro">
+
+        Explore our work across building design & consultancy,
+        construction contracting, and construction materials supply.
+
+    </p>
+
+
+    <div class="project-container">
+
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-card">
+
+            <img
+                src="design-project.jpg"
+                alt="Building Design & Consultancy Project"
+            >
+
+            <div class="project-card-content">
 
                 <h3>
-                    Arabin Home Design & Construction
+                    Building Design & Consultancy
                 </h3>
 
                 <p>
-                    Building Dreams with Strong & Smart Structural Design
+                    Professional architectural, structural design and
+                    engineering consultancy services.
                 </p>
 
-                <p>
-                    We Ensure Quality with Cost Effective Design
-                </p>
-
-            </div>
+                <button onclick="toggleProject(this)">
+                    View Projects →
+                </button>
 
 
-            <!-- Quick Links -->
+                <div class="project-details">
 
-            <div class="footer-links">
+                    <p>
+                        • Architectural Design
+                    </p>
 
-                <h4>
-                    Quick Links
-                </h4>
+                    <p>
+                        • Structural Design
+                    </p>
 
-                <a href="#home">
-                    Home
-                </a>
+                    <p>
+                        • 3D Visualization
+                    </p>
 
-                <a href="#about">
-                    About
-                </a>
+                    <p>
+                        • Engineering Consultancy
+                    </p>
 
-                <a href="#services">
-                    Services
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
-            </div>
-
-
-            <!-- Footer Contact -->
-
-            <div class="footer-contact">
-
-                <h4>
-                    Contact Us
-                </h4>
-
-                <p>
-                    📞 01715793697
-                </p>
-
-                <p>
-                    📧 arabin.hdc@gmail.com
-                </p>
-
-                <p>
-
-                    📘
-                    <a
-                        href="https://facebook.com/ArabinHDC"
-                        target="_blank"
-                    >
-                        Facebook
-                    </a>
-
-                </p>
-
-                <p>
-
-                    ▶️
-                    <a
-                        href="https://youtube.com/ArabinHDC"
-                        target="_blank"
-                    >
-                        YouTube
-                    </a>
-
-                </p>
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="copyright">
+        <!-- PROJECT 02 -->
 
-            © 2026 Arabin Home Design & Construction.
-            All Rights Reserved.
+        <div class="project-card">
+
+            <img
+                src="contracting-project.jpg"
+                alt="Construction Contracting Project"
+            >
+
+            <div class="project-card-content">
+
+                <h3>
+                    Contracting
+                </h3>
+
+                <p>
+                    Quality construction and civil works delivered by
+                    skilled and experienced professionals.
+                </p>
+
+                <button onclick="toggleProject(this)">
+                    View Projects →
+                </button>
+
+
+                <div class="project-details">
+
+                    <p>
+                        • Ongoing Project
+                    </p>
+
+                    <p>
+                        • Completed Project
+                    </p>
+
+                    <p>
+                        • Building Construction
+                    </p>
+
+                    <p>
+                        • Civil & Infrastructure Works
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </footer>
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-card">
+
+            <img
+                src="materials-supply.jpg"
+                alt="Construction Materials Supply"
+            >
+
+            <div class="project-card-content">
+
+                <h3>
+                    Materials Supply
+                </h3>
+
+                <p>
+                    Reliable supply of quality construction materials
+                    for residential, commercial and infrastructure projects.
+                </p>
+
+                <button onclick="toggleProject(this)">
+                    View Material Sample →
+                </button>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
+                <div class="project-details">
 
-    <script>
+                    <p>
+                        • Rod & Steel
+                    </p>
 
+                    <p>
+                        • Cement
+                    </p>
 
-        /* =====================================================
-           SERVICES - SHOW / HIDE ALL
-        ===================================================== */
+                    <p>
+                        • Brick
+                    </p>
 
-        function toggleAllServices() {
+                    <p>
+                        • Sand & Stone
+                    </p>
 
-            const container =
-                document.querySelector(".service-container");
+                </div>
 
-            const button =
-                document.querySelector(".view-all-services");
+            </div>
 
-
-            container.classList.toggle("show-services");
-
-
-            if (
-                container.classList.contains("show-services")
-            ) {
-
-                button.innerHTML =
-                    "Hide Services ↑";
-
-            } else {
-
-                button.innerHTML =
-                    "View All Services ↓";
-
-            }
-
-        }
+        </div>
 
 
-        /* =====================================================
-           SERVICE - VIEW DETAILS
-        ===================================================== */
+    </div>
 
-        function toggleService(button) {
-
-            const details =
-                button.nextElementSibling;
+</section>
 
 
-            if (
-                details.style.display === "block"
-            ) {
+<!-- =====================================================
+     WHY CHOOSE AHDC
+===================================================== -->
 
-                details.style.display = "none";
+<section class="why-us">
 
-                button.innerHTML =
-                    "View Details →";
-
-            } else {
-
-                details.style.display = "block";
-
-                button.innerHTML =
-                    "Hide Details ↑";
-
-            }
-
-        }
-/* =====================================================
-   PROJECTS - VIEW DETAILS
-===================================================== */
-
-function toggleProject(button) {
-
-    const details =
-        button.nextElementSibling;
+    <h2>
+        Why Choose AHDC
+    </h2>
 
 
-    if (
-        details.classList.contains("show")
-    ) {
+    <div class="why-container">
 
-        details.classList.remove("show");
+
+        <div class="why-card">
+
+            <h3>
+                Quality
+            </h3>
+
+            <p>
+                We maintain quality in every stage of design and construction.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                Cost Effective
+            </h3>
+
+            <p>
+                Smart engineering solutions with practical and cost-effective design.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                Professional
+            </h3>
+
+            <p>
+                Professional engineering services with attention to every detail.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                Reliable
+            </h3>
+
+            <p>
+                We value trust, transparency and long-term client relationships.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <p>
+        Ready to build your dream project?
+    </p>
+
+    <p>
+        <strong>
+            Arabin Home Design & Construction (AHDC)
+        </strong>
+    </p>
+
+
+    <p class="office-address">
+
+        📍 <strong>Dhaka Office:</strong><br>
+
+        Suite # 5B, Suvastu Villa,
+        <span style="white-space: nowrap;">
+            House # 114,
+        </span><br>
+
+        Road # 15, Block C, Banani, Dhaka.
+
+    </p>
+
+
+    <p class="office-address">
+
+        📍 <strong>Debidwar Office:</strong><br>
+
+        403/1, Gomti R/A, Baniapara,<br>
+
+        Debidwar, Cumilla.
+
+    </p>
+
+
+    <p>
+        📞 01715793697
+    </p>
+
+
+    <p>
+        📧 arabin.hdc@gmail.com
+    </p>
+
+
+    <p>
+
+        📘
+
+        <a
+            href="https://facebook.com/ArabinHDC"
+            target="_blank"
+        >
+            Facebook
+        </a>
+
+        &nbsp;&nbsp;
+
+        ▶️
+
+        <a
+            href="https://youtube.com/ArabinHDC"
+            target="_blank"
+        >
+            YouTube
+        </a>
+
+    </p>
+
+
+    <div class="contact-buttons">
+
+        <a href="tel:+8801715793697">
+            Call Us
+        </a>
+
+        <a
+            href="https://wa.me/8801715793697"
+            target="_blank"
+        >
+            WhatsApp
+        </a>
+
+        <button onclick="toggleInquiry()">
+            Send an Inquiry →
+        </button>
+
+    </div>
+
+
+    <!-- INQUIRY FORM -->
+
+    <div
+        class="inquiry-form"
+        id="inquiryForm"
+    >
+
+        <h3>
+            Send an Inquiry
+        </h3>
+
+
+        <input
+            type="text"
+            id="inquiryName"
+            placeholder="Your Name"
+        >
+
+
+        <input
+            type="tel"
+            id="inquiryPhone"
+            placeholder="Phone Number"
+        >
+
+
+        <input
+            type="email"
+            id="inquiryEmail"
+            placeholder="Email Address"
+        >
+
+
+        <select id="inquiryService">
+
+            <option value="">
+                Select Service
+            </option>
+
+            <option>
+                Architectural & Structural Design
+            </option>
+
+            <option>
+                Interior, Exterior & 3D Visualization
+            </option>
+
+            <option>
+                Steel Building & Steel Shed Construction
+            </option>
+
+            <option>
+                Road Design & Construction
+            </option>
+
+            <option>
+                Electrical & Plumbing Design
+            </option>
+
+            <option>
+                RAJUK/Paurashava Approval
+            </option>
+
+            <option>
+                Earthwork & Drainage Systems
+            </option>
+
+            <option>
+                Survey, Soil Investigation & Load Testing
+            </option>
+
+            <option>
+                Construction & Site Supervision
+            </option>
+
+            <option>
+                Estimation, BOQ & Costing
+            </option>
+
+            <option>
+                Contracting & Material Supply
+            </option>
+
+            <option>
+                Construction Trades & Maintenance
+            </option>
+
+        </select>
+
+
+        <input
+            type="text"
+            id="inquiryLocation"
+            placeholder="Project Location"
+        >
+
+
+        <textarea
+            id="inquiryMessage"
+            placeholder="Tell us about your project"
+        ></textarea>
+
+
+        <button
+            class="submit-inquiry"
+            onclick="sendInquiry()"
+        >
+            Submit Inquiry →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="Arabin Home Design & Construction"
+            >
+
+            <h3>
+                Arabin Home Design & Construction
+            </h3>
+
+            <p>
+                Building Dreams with Strong & Smart Structural Design
+            </p>
+
+            <p>
+                We Ensure Quality with Cost Effective Design
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h4>
+                Contact Us
+            </h4>
+
+            <p>
+                📞 01715793697
+            </p>
+
+            <p>
+                📧 arabin.hdc@gmail.com
+            </p>
+
+            <p>
+                📘
+                <a
+                    href="https://facebook.com/ArabinHDC"
+                    target="_blank"
+                >
+                    Facebook
+                </a>
+            </p>
+
+            <p>
+                ▶️
+                <a
+                    href="https://youtube.com/ArabinHDC"
+                    target="_blank"
+                >
+                    YouTube
+                </a>
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Arabin Home Design & Construction.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       SERVICES - SHOW / HIDE ALL
+    ===================================================== */
+
+    function toggleAllServices() {
+
+        const container =
+            document.querySelector(".service-container");
+
+        const button =
+            document.querySelector(".view-all-services");
+
+
+        container.classList.toggle("show-services");
 
 
         if (
-            button.innerHTML.includes("Material")
+            container.classList.contains("show-services")
         ) {
 
             button.innerHTML =
-                "View Material Sample →";
+                "Hide Services ↑";
 
         } else {
 
             button.innerHTML =
-                "View Projects →";
-
-        }
-
-
-    } else {
-
-        details.classList.add("show");
-
-
-        if (
-            button.innerHTML.includes("Material")
-        ) {
-
-            button.innerHTML =
-                "Hide Material Sample ↑";
-
-        } else {
-
-            button.innerHTML =
-                "Hide Projects ↑";
+                "View All Services ↓";
 
         }
 
     }
 
-}
 
-        /* =====================================================
-           INQUIRY FORM - SHOW / HIDE
-        ===================================================== */
+    /* =====================================================
+       SERVICE - VIEW DETAILS
+    ===================================================== */
 
-        function toggleInquiry() {
+    function toggleService(button) {
 
-            const form =
-                document.getElementById("inquiryForm");
+        const details =
+            button.nextElementSibling;
 
 
-            form.classList.toggle("show");
+        if (
+            details.style.display === "block"
+        ) {
 
+            details.style.display = "none";
+
+            button.innerHTML =
+                "View Details →";
+
+        } else {
+
+            details.style.display = "block";
+
+            button.innerHTML =
+                "Hide Details ↑";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PROJECT - VIEW PROJECTS
+    ===================================================== */
+
+    function toggleProject(button) {
+
+        const details =
+            button.nextElementSibling;
+
+
+        details.classList.toggle("show");
+
+
+        if (
+            details.classList.contains("show")
+        ) {
 
             if (
-                form.classList.contains("show")
+                button.innerText.includes("Material")
             ) {
 
-                form.scrollIntoView({
+                button.innerHTML =
+                    "Hide Materials ↑";
 
-                    behavior: "smooth",
+            } else {
 
-                    block: "start"
+                button.innerHTML =
+                    "Hide Projects ↑";
 
-                });
+            }
+
+        } else {
+
+            if (
+                button.innerText.includes("Material")
+            ) {
+
+                button.innerHTML =
+                    "View Material Sample →";
+
+            } else {
+
+                button.innerHTML =
+                    "View Projects →";
 
             }
 
         }
 
-
-        /* =====================================================
-           SEND INQUIRY TO WHATSAPP
-        ===================================================== */
-
-        function sendInquiry() {
-
-            const name =
-                document
-                    .getElementById("inquiryName")
-                    .value
-                    .trim();
+    }
 
 
-            const phone =
-                document
-                    .getElementById("inquiryPhone")
-                    .value
-                    .trim();
+    /* =====================================================
+       INQUIRY FORM - SHOW / HIDE
+    ===================================================== */
+
+    function toggleInquiry() {
+
+        const form =
+            document.getElementById("inquiryForm");
 
 
-            const email =
-                document
-                    .getElementById("inquiryEmail")
-                    .value
-                    .trim();
+        form.classList.toggle("show");
 
 
-            const service =
-                document
-                    .getElementById("inquiryService")
-                    .value;
+        if (
+            form.classList.contains("show")
+        ) {
+
+            form.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "start"
+
+            });
+
+        }
+
+    }
 
 
-            const location =
-                document
-                    .getElementById("inquiryLocation")
-                    .value
-                    .trim();
+    /* =====================================================
+       SEND INQUIRY TO WHATSAPP
+    ===================================================== */
+
+    function sendInquiry() {
+
+        const name =
+            document
+                .getElementById("inquiryName")
+                .value
+                .trim();
 
 
-            const message =
-                document
-                    .getElementById("inquiryMessage")
-                    .value
-                    .trim();
+        const phone =
+            document
+                .getElementById("inquiryPhone")
+                .value
+                .trim();
 
 
-            if (
-                !name ||
-                !phone ||
-                !service ||
-                !message
-            ) {
-
-                alert(
-                    "Please fill in your Name, Phone Number, Service and Project Details."
-                );
-
-                return;
-
-            }
+        const email =
+            document
+                .getElementById("inquiryEmail")
+                .value
+                .trim();
 
 
-            const whatsappMessage =
-
-                "AHDC Project Inquiry\n\n" +
-
-                "Name: " +
-                name +
-                "\n" +
-
-                "Phone: " +
-                phone +
-                "\n" +
-
-                "Email: " +
-                email +
-                "\n" +
-
-                "Service: " +
-                service +
-                "\n" +
-
-                "Project Location: " +
-                location +
-                "\n" +
-
-                "Project Details: " +
-                message;
+        const service =
+            document
+                .getElementById("inquiryService")
+                .value;
 
 
-            const whatsappURL =
-
-                "https://wa.me/8801715793697?text=" +
-
-                encodeURIComponent(
-                    whatsappMessage
-                );
+        const location =
+            document
+                .getElementById("inquiryLocation")
+                .value
+                .trim();
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
+        const message =
+            document
+                .getElementById("inquiryMessage")
+                .value
+                .trim();
+
+
+        if (
+            !name ||
+            !phone ||
+            !service ||
+            !message
+        ) {
+
+            alert(
+                "Please fill in your Name, Phone Number, Service and Project Details."
             );
 
+            return;
+
         }
 
-    </script>
+
+        const whatsappMessage =
+
+            "AHDC Project Inquiry\n\n" +
+
+            "Name: " +
+            name +
+            "\n" +
+
+            "Phone: " +
+            phone +
+            "\n" +
+
+            "Email: " +
+            email +
+            "\n" +
+
+            "Service: " +
+            service +
+            "\n" +
+
+            "Project Location: " +
+            location +
+            "\n" +
+
+            "Project Details: " +
+            message;
+
+
+        const whatsappURL =
+
+            "https://wa.me/8801715793697?text=" +
+
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+
+</script>
 
 
 </body>
+
 </html>
