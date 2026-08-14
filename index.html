@@ -2158,7 +2158,60 @@
             }
 
         }
+/* =====================================================
+   PROJECTS - VIEW DETAILS
+===================================================== */
 
+function toggleProject(button) {
+
+    const details =
+        button.nextElementSibling;
+
+
+    if (
+        details.classList.contains("show")
+    ) {
+
+        details.classList.remove("show");
+
+
+        if (
+            button.innerHTML.includes("Material")
+        ) {
+
+            button.innerHTML =
+                "View Material Sample →";
+
+        } else {
+
+            button.innerHTML =
+                "View Projects →";
+
+        }
+
+
+    } else {
+
+        details.classList.add("show");
+
+
+        if (
+            button.innerHTML.includes("Material")
+        ) {
+
+            button.innerHTML =
+                "Hide Material Sample ↑";
+
+        } else {
+
+            button.innerHTML =
+                "Hide Projects ↑";
+
+        }
+
+    }
+
+}
 
         /* =====================================================
            INQUIRY FORM - SHOW / HIDE
