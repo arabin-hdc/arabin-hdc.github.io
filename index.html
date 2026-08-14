@@ -330,95 +330,101 @@
         ===================================================== */
 
         .projects {
-            padding: 70px 25px;
-            background: white;
-            text-align: center;
-        }
+    padding: 70px 25px;
+    background: white;
+    text-align: center;
+}
 
-        .projects h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+.projects h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
 
-        .projects-intro {
-            max-width: 800px;
-            margin: 0 auto 40px;
+.projects-intro {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #555;
+}
 
-            font-size: 17px;
-            line-height: 1.6;
-        }
+.project-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-        .project-container {
-            max-width: 1100px;
-            margin: auto;
+.project-card {
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+}
 
-        .project-card {
-            background: #f5f5f5;
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
 
-            border-radius: 10px;
-            overflow: hidden;
+.project-card-content {
+    padding: 25px 20px;
+}
 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+.project-card h3 {
+    font-size: 21px;
+    margin: 0 0 12px;
+}
 
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+.project-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    color: #555;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
+.project-card button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
 
-            box-shadow:
-                0 5px 18px rgba(0,0,0,0.15);
-        }
+.project-card button:hover {
+    background: #333;
+}
 
-        .project-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
+/* Project Details */
 
-        .project-card-content {
-            padding: 20px;
-        }
+.project-details {
+    display: none;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
 
-        .project-card h3 {
-            font-size: 21px;
-            margin: 0 0 12px;
-        }
+.project-details.show {
+    display: block;
+}
 
-        .project-card p {
-            font-size: 15px;
-            line-height: 1.6;
-            margin: 0 0 20px;
-        }
-
-        .project-buttons {
-            margin-top: 15px;
-        }
-
-        .project-buttons a {
-            display: inline-block;
-
-            padding: 10px 18px;
-
-            background: #111;
-            color: white;
-
-            text-decoration: none;
-            border-radius: 5px;
-
-            font-size: 14px;
-        }
-
-        .project-buttons a:hover {
-            background: #333;
-        }
+.project-details p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #333;
+}
 
 
         /* =====================================================
@@ -812,17 +818,32 @@
 
             /* Projects */
 
-            .projects {
-                padding: 60px 15px;
-            }
+             .projects {
+        padding: 60px 15px;
+    }
 
-            .project-container {
-                grid-template-columns: 1fr;
-            }
+    .projects h2 {
+        font-size: 30px;
+    }
 
-            .project-card img {
-                height: 220px;
-            }
+    .projects-intro {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: 220px;
+    }
+
+    .project-card-content {
+        padding: 22px 18px;
+    }
+}
 
 
             /* Why Choose */
@@ -1537,20 +1558,43 @@
 
                     <h3>
                         Materials Supply
-                    </h3>
+<section class="projects" id="projects">
 
-                    <p>
-                        Reliable supply of quality construction materials
-                        for residential, commercial and infrastructure projects.
-                    </p>
+    <h2>Our Projects</h2>
 
-                    <div class="project-buttons">
+    <p class="projects-intro">
+        Explore our work across building design & consultancy,
+        construction contracting, and construction materials supply.
+    </p>
 
-                        <a href="#">
-                            View Material Sample →
-                        </a>
+    <div class="project-container">
 
-                    </div>
+        <!-- Building Design & Consultancy -->
+
+        <div class="project-card">
+
+            <img src="design-project.jpg"
+                 alt="Building Design & Consultancy Project">
+
+            <div class="project-card-content">
+
+                <h3>Building Design & Consultancy</h3>
+
+                <p>
+                    Professional architectural, structural design and
+                    engineering consultancy services.
+                </p>
+
+                <button onclick="toggleProject(this)">
+                    View Projects →
+                </button>
+
+                <div class="project-details">
+
+                    <p>• Architectural Design</p>
+                    <p>• Structural Design</p>
+                    <p>• 3D Visualization</p>
+                    <p>• Engineering Consultancy</p>
 
                 </div>
 
@@ -1558,7 +1602,77 @@
 
         </div>
 
-    </section>
+
+        <!-- Contracting -->
+
+        <div class="project-card">
+
+            <img src="contracting-project.jpg"
+                 alt="Construction Contracting Project">
+
+            <div class="project-card-content">
+
+                <h3>Contracting</h3>
+
+                <p>
+                    Quality construction and civil works delivered by
+                    skilled and experienced professionals.
+                </p>
+
+                <button onclick="toggleProject(this)">
+                    View Projects →
+                </button>
+
+                <div class="project-details">
+
+                    <p>• Ongoing Project</p>
+                    <p>• Completed Project</p>
+                    <p>• Building Construction</p>
+                    <p>• Civil & Infrastructure Works</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Materials Supply -->
+
+        <div class="project-card">
+
+            <img src="materials-supply.jpg"
+                 alt="Construction Materials Supply">
+
+            <div class="project-card-content">
+
+                <h3>Materials Supply</h3>
+
+                <p>
+                    Reliable supply of quality construction materials
+                    for residential, commercial and infrastructure projects.
+                </p>
+
+                <button onclick="toggleProject(this)">
+                    View Material Sample →
+                </button>
+
+                <div class="project-details">
+
+                    <p>• Rod & Steel</p>
+                    <p>• Cement</p>
+                    <p>• Brick</p>
+                    <p>• Sand & Stone</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
     <!-- =====================================================
